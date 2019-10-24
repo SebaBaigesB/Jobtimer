@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_10_18_155550) do
     t.string "job_title"
     t.string "avatar"
     t.string "hourly_wage"
+    t.string "banner_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

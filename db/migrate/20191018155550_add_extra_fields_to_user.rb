@@ -8,5 +8,6 @@ class AddExtraFieldsToUser < ActiveRecord::Migration[5.2]
     add_column :users, :job_title, :string
     add_column :users, :avatar, :string
     add_column :users, :hourly_wage, :string
+    add_column :users, :banner_image, :string
   end
 end
