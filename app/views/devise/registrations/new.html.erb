@@ -20,11 +20,9 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "City" }%>
-
-  <%= f.country_select :country_select,
-  autofocus: true,
-  input_html: { autocomplete: "Country" } %>
-
+                <%= f.country_select :country_select,
+                autofocus: true,
+                input_html: { autocomplete: "Country" } %>
                 <%= f.input :job,
                 required: true,
                 autofocus: true,
@@ -39,11 +37,11 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Hourly wage" }%>
-    <%= f.input :password,
+                <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+                <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>

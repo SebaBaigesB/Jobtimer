@@ -1,0 +1,31 @@
+<div class="sidebar">
+  <div class="user-infos">
+    <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.avatar %>" >
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+    </div>
+    <br>
+    <div class="info">
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<br>
+<%= current_user.job %>
+    </div>
+    <div class="border"></div>
+  </div>
+
+  <div class="sidebar-item">
+    <ul class="list">
+      <a href=" <%= projects_path(current_user.id) %> ">
+        <p>
+          <li id="dash" class="dash"><i class="far fa-building"></i>   Dashboard</li>
+        </p>
+      </a>
+      <a href=" <%= edit_user_registration_path(current_user.id) %> ">
+        <p>
+          <li id="user-edit" class="profil"><i class="fas fa-user"></i>   Profile information</li>
+        </p>
+      </a>
+    </ul>
+  </div>
+</div>
