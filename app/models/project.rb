@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
-  has_many :step
-  has_many :visit
+  has_many :step, dependent: :destroy
+  has_many :visit, dependent: :destroy
+
+  mount_uploader :photo, PhotoUploader, optional: true
 end

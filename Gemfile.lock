@@ -242,7 +242,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  carrierwave (~> 2.0)
+  carrierwave
   cloudinary (~> 1.9.1)
   country_select (~> 4.0)
   devise

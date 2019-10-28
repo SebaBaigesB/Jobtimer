@@ -1,70 +1,75 @@
 <div class="container">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-<div class="infos">
-    <%= f.input :password,
+    <h2>Edit
+        <%= resource_name.to_s.humanize %>
+    </h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for:
+            <%= resource.unconfirmed_email %>
+        </p>
+        <% end %>
+        <div class="infos">
+            <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+            <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
+            <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :first_name,
+            <%= f.input :first_name,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "first name" } %>
-    <%= f.input :last_name,
+            <%= f.input :last_name,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "last name" } %>
-    <%= f.input :city,
+            <%= f.input :city,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "City" } %>
-    <%= f.country_select :country_select,
+            <%= f.country_select :country_select,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "Country" } %>
-    <%= f.input :job,
+            <%= f.input :job,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "Job" } %>
-    <%= f.select :job_title,
+            <%= f.select :job_title,
                 Unemployed: true,
                 Employee: true,
                 Executive: true,
                 CEO: true,
                 Freelance: true %>
-    <%= f.input :hourly_wage,
+            <%= f.input :hourly_wage,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "Hourly wage" } %>
-
-</div>
-
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+            <tr>
+                <%= f.input :photo,
+                   input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-fill'}, label: '📁 Upload your avatar' %>
+                <%= f.input :photo_cache, as: :hidden %>
+            </tr>
+            <%= f.input :banner,
+             input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-fill'}, label: '📁 Upload your banner' %>
+            <%= f.input :banner_cache, as: :hidden %>
+        </div>
+    </div>
+    <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+    </div>
+    <% end %>
+    <h3>Cancel my account</h3>
+    <p>Unhappy?
+        <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </p>
+    <%= link_to "Back", :back %>
 </div>
